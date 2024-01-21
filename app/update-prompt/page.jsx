@@ -3,13 +3,12 @@
 import Form from "@components/Form";
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-const CreatePrompt = () => {
+const CreatePrompt = ({ searchParams }) => {
   const router = useRouter();
 
   const [submitting, setSubmitting] = useState(false);
 
-  const searchParams = useSearchParams();
-  const promptId = searchParams.get("id");
+  const promptId = searchParams.id;
   const [post, setPost] = useState({
     prompt: "",
     tag: "",
